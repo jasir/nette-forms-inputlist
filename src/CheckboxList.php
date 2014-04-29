@@ -258,7 +258,7 @@ class CheckboxList extends BaseControl
 	 * @param  int
 	 * @return bool
 	 */
-	public static function validateMinLength(CheckboxList $control, $length)
+	public static function validateMinLength(\Nette\Forms\IControl $control, $length)
 	{
 		return count($control->getValue()) >= $length;
 	}
@@ -272,7 +272,7 @@ class CheckboxList extends BaseControl
 	 * @param  int
 	 * @return bool
 	 */
-	public static function validateMaxLength(CheckboxList $control, $length)
+	public static function validateMaxLength(\Nette\Forms\IControl $control, $length)
 	{
 		return count($control->getValue()) <= $length;
 	}
@@ -286,7 +286,7 @@ class CheckboxList extends BaseControl
 	 * @param  int
 	 * @return bool
 	 */
-	public static function validateLength(CheckboxList $control, $length)
+	public static function validateLength(\Nette\Forms\IControl $control, $length)
 	{
 		return count($control->getValue()) == $length;
 	}
@@ -300,7 +300,7 @@ class CheckboxList extends BaseControl
 	 * @param  int
 	 * @return bool
 	 */
-	public static function validateRange(IControl $control, $range)
+	public static function validateRange(\Nette\Forms\IControl $control, $range)
 	{
 		return static::validateMinLength($control, $range[0]) && static::validateMaxLength($control, $range[1]);
 	}
@@ -314,7 +314,7 @@ class CheckboxList extends BaseControl
 	 * @param  string
 	 * @return bool
 	 */
-	public static function validateRegexp(Checkboxlist $control, $regexp)
+	public static function validateRegexp(\Nette\Forms\IControl $control, $regexp)
 	{
 		return (bool) preg_match($regexp, $control->getValue());
 	}
